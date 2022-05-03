@@ -1,0 +1,118 @@
+
+FG_BG.png
+size: 1840,1012
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Detective booth
+  rotate: false
+  xy: 2, 33
+  size: 721, 443
+  orig: 721, 443
+  offset: 0, 0
+  index: -1
+architecture
+  rotate: true
+  xy: 1447, 289
+  size: 721, 359
+  orig: 721, 359
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 478
+  size: 721, 532
+  orig: 721, 532
+  offset: 0, 0
+  index: -1
+banner
+  rotate: false
+  xy: 1172, 86
+  size: 72, 73
+  orig: 72, 73
+  offset: 0, 0
+  index: -1
+sand_1
+  rotate: false
+  xy: 1113, 2
+  size: 80, 58
+  orig: 80, 58
+  offset: 0, 0
+  index: -1
+sand_2
+  rotate: false
+  xy: 1260, 163
+  size: 114, 57
+  orig: 114, 57
+  offset: 0, 0
+  index: -1
+sand_3
+  rotate: false
+  xy: 1139, 161
+  size: 119, 59
+  orig: 119, 59
+  offset: 0, 0
+  index: -1
+sand_4
+  rotate: true
+  xy: 1376, 158
+  size: 62, 64
+  orig: 62, 64
+  offset: 0, 0
+  index: -1
+sand_5
+  rotate: false
+  xy: 725, 2
+  size: 127, 40
+  orig: 127, 40
+  offset: 0, 0
+  index: -1
+sand_ref
+  rotate: false
+  xy: 1025, 53
+  size: 86, 90
+  orig: 86, 90
+  offset: 0, 0
+  index: -1
+sand_ref2
+  rotate: true
+  xy: 1113, 62
+  size: 81, 57
+  orig: 81, 57
+  offset: 0, 0
+  index: -1
+sand_ref3
+  rotate: false
+  xy: 1025, 145
+  size: 112, 75
+  orig: 112, 75
+  offset: 0, 0
+  index: -1
+sky_01
+  rotate: false
+  xy: 725, 222
+  size: 720, 393
+  orig: 720, 393
+  offset: 0, 0
+  index: -1
+sky_02
+  rotate: false
+  xy: 725, 617
+  size: 720, 393
+  orig: 720, 393
+  offset: 0, 0
+  index: -1
+smoke_01
+  rotate: true
+  xy: 725, 44
+  size: 176, 298
+  orig: 176, 298
+  offset: 0, 0
+  index: -1
+smoke_02
+  rotate: false
+  xy: 1447, 5
+  size: 389, 282
+  orig: 389, 282
+  offset: 0, 0
+  index: -1

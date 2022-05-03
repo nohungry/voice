@@ -1,0 +1,34 @@
+
+BigWin.png
+size: 1536,352
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BIG
+  rotate: true
+  xy: 1359, 16
+  size: 331, 174
+  orig: 331, 174
+  offset: 0, 0
+  index: -1
+B_WIN
+  rotate: true
+  xy: 1202, 2
+  size: 345, 155
+  orig: 345, 155
+  offset: 0, 0
+  index: -1
+line
+  rotate: false
+  xy: 595, 96
+  size: 605, 251
+  orig: 605, 252
+  offset: 0, 1
+  index: -1
+mountain
+  rotate: false
+  xy: 2, 2
+  size: 591, 345
+  orig: 592, 346
+  offset: 0, 1
+  index: -1

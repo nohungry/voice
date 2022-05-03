@@ -1,0 +1,9 @@
+{
+    "webApiUrl": "http://ngame.uat.kk168-01.com",
+    "gameVersion": "3d5b26a",
+    "SDKVersion": "SDK_VERSION",
+    "webWagerApiUrl": "http://sbgame.uat.kk168-01.com",
+    "webWagerUrl": "http://sfgame.uat.kk168-01.com/web",
+    "chatRoomUrl": "http://kkgame.morse-uat.paradise-soft.com.tw",
+    "chatRoomSocketUrl": "ws://kkgame.morse-uat.paradise-soft.com.tw"
+}

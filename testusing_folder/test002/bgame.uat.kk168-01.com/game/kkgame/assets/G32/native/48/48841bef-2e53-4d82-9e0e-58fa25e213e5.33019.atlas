@@ -1,0 +1,62 @@
+
+End.png
+size: 1844,588
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+WIN
+  rotate: false
+  xy: 832, 142
+  size: 478, 206
+  orig: 478, 206
+  offset: 0, 0
+  index: -1
+dragon
+  rotate: true
+  xy: 2, 350
+  size: 233, 1839
+  orig: 233, 1839
+  offset: 0, 0
+  index: -1
+gold_cloud_1
+  rotate: false
+  xy: 2, 13
+  size: 461, 335
+  orig: 461, 335
+  offset: 0, 0
+  index: -1
+gold_cloud_2
+  rotate: false
+  xy: 465, 2
+  size: 365, 346
+  orig: 365, 346
+  offset: 0, 0
+  index: -1
+gold_cloud_3
+  rotate: true
+  xy: 1312, 128
+  size: 220, 233
+  orig: 220, 233
+  offset: 0, 0
+  index: -1
+gold_cloud_4
+  rotate: false
+  xy: 1547, 166
+  size: 194, 182
+  orig: 194, 182
+  offset: 0, 0
+  index: -1
+gold_cloud_5
+  rotate: false
+  xy: 1743, 256
+  size: 83, 92
+  orig: 83, 92
+  offset: 0, 0
+  index: -1
+red_cloud
+  rotate: false
+  xy: 832, 10
+  size: 187, 130
+  orig: 187, 130
+  offset: 0, 0
+  index: -1
