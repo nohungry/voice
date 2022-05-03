@@ -12,7 +12,8 @@ import confirm_use
 st = time.time()
 
 # 溫州麻將範例_Path
-specPath = "C:/Users/norman_cheng/Desktop/voice/spec_music/specMusic"
+# specPath = "C:/Users/norman_cheng/Desktop/voice/spec_music/specMusic"
+specPath = r"F:\voice\spec_music\specMusic"
 mp3Unique = r".mp3"
 wavUnique = r".wav"
 
@@ -26,8 +27,8 @@ assert len(specMusicOther) <= 0, "another file in specMusic folder"
 
 # # 3. 對應頻域分析, 把MP3檔轉變為WAV檔, 也把WAV檔轉變為MP3檔, 分別存在不同的folder
 specInputPath = specPath
-specWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\spec_music\wavFile"
-specMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\spec_music\mp3File"
+specWavOutputPath = r"F:\voice\spec_music\wavFile"
+specMp3OutputPath = r"F:\voice\spec_music\mp3File"
 # transfer.ffmpegMp3ToWav(specInputPath, specWavOutputPath)
 # transfer.ffmpegWavToMp3(specInputPath, specMp3OutputPath)
 
@@ -70,8 +71,9 @@ for i in range(len(specMusicList)):
 # -------------------------------------------------------------------------
 
 # 溫州麻將_ResourceSaver_Path
-testPath = "C:/Users/norman_cheng/Desktop/voice/website_music/testMusic"
-testPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_origin_music"
+# testPath = "C:/Users/norman_cheng/Desktop/voice/website_music/testMusic"
+# testPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_origin_music"
+testPath = r"F:\voice\website_music\testMusic"
 
 # 1. website音樂detail都塞進list
 testMusicList = []
@@ -85,8 +87,10 @@ assert len(testMusicOther) <= 0, "another file in testMusic folder"
 testInputPath = testPath
 # testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\website_music\waveFile"
 # testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\website_music\mp3File"
-testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_wav"
-testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_mp3"
+# testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_wav"
+# testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_mp3"
+testWavOutputPath = 
+testMp3OutputPath =
 transfer.ffmpegMp3ToWav(testInputPath, testWavOutputPath)
 transfer.ffmpegWavToMp3(testInputPath, testMp3OutputPath)
 
