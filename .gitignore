@@ -215,3 +215,4 @@ fabric.properties
 # nohungry_use
 venv
 .idea
+.txt

@@ -1,6 +1,5 @@
 import librosa
 import os
-import numpy as np
 import time
 from mutagen.mp3 import MP3
 import mp3_to_wav_and_reverse as transfer
@@ -8,12 +7,15 @@ import frequency_transform
 # import shutil # 刪除資料夾
 import confirm_use
 
+# root dir
+rootPath = os.path.dirname(__file__)
+
 # 計算時間
 st = time.time()
 
 # 溫州麻將範例_Path
-# specPath = "C:/Users/norman_cheng/Desktop/voice/spec_music/specMusic"
-specPath = r"F:\voice\spec_music\specMusic"
+specFolder = r"spec_music\specMusic"
+specPath = os.path.join(rootPath, specFolder)
 mp3Unique = r".mp3"
 wavUnique = r".wav"
 
@@ -25,16 +27,14 @@ specWavDetailList = []
 specMusicOther = [os.path.join(specPath, _) for _ in os.listdir(specPath) if not _.endswith(mp3Unique) and not _.endswith(wavUnique)]
 assert len(specMusicOther) <= 0, "another file in specMusic folder"
 
-# # 3. 對應頻域分析, 把MP3檔轉變為WAV檔, 也把WAV檔轉變為MP3檔, 分別存在不同的folder
+# 3. 對應頻域分析, 把MP3檔轉變為WAV檔, 也把WAV檔轉變為MP3檔, 分別存在不同的folder
 specInputPath = specPath
-specWavOutputPath = r"F:\voice\spec_music\wavFile"
-specMp3OutputPath = r"F:\voice\spec_music\mp3File"
-# transfer.ffmpegMp3ToWav(specInputPath, specWavOutputPath)
-# transfer.ffmpegWavToMp3(specInputPath, specMp3OutputPath)
-
-# # 測試使用
-# specWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\compare_use\specwav"
-# specMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\compare_use\spec"
+specWavFolder = r"spec_music\wavFile"
+specMp3Folder = r"spec_music\mp3File"
+specWavOutputPath = os.path.join(rootPath, specWavFolder)
+specMp3OutputPath = os.path.join(rootPath, specMp3Folder)
+transfer.ffmpegMp3ToWav(specInputPath, specWavOutputPath)
+transfer.ffmpegWavToMp3(specInputPath, specMp3OutputPath)
 
 # 4. 整理mp3 & wav檔案進list
 specWavFileList = [os.path.join(specWavOutputPath, _) for _ in os.listdir(specWavOutputPath)]
@@ -71,9 +71,8 @@ for i in range(len(specMusicList)):
 # -------------------------------------------------------------------------
 
 # 溫州麻將_ResourceSaver_Path
-# testPath = "C:/Users/norman_cheng/Desktop/voice/website_music/testMusic"
-# testPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_origin_music"
-testPath = r"F:\voice\website_music\testMusic"
+testFolder = r"website_music\testMusic"
+testPath = os.path.join(rootPath, testFolder)
 
 # 1. website音樂detail都塞進list
 testMusicList = []
@@ -85,19 +84,12 @@ assert len(testMusicOther) <= 0, "another file in testMusic folder"
 
 # 3. 對應頻域分析, 把MP3檔轉變為WAV檔, 也把WAV檔轉變為MP3檔, 分別存在不同的folder
 testInputPath = testPath
-# testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\website_music\waveFile"
-# testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\website_music\mp3File"
-# testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_wav"
-# testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\test_mp3"
-testWavOutputPath = 
-testMp3OutputPath =
+testWavFolder = r"website_music\waveFile"
+testMp3Folder = r"website_music\mp3File"
+testWavOutputPath = os.path.join(rootPath, testWavFolder)
+testMp3OutputPath = os.path.join(rootPath, testMp3Folder)
 transfer.ffmpegMp3ToWav(testInputPath, testWavOutputPath)
 transfer.ffmpegWavToMp3(testInputPath, testMp3OutputPath)
-
-# # 測試完後刪除該段___晚點刪除
-# testWavOutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\compare_use\testwav"
-# testMp3OutputPath = r"C:\Users\norman_cheng\Desktop\voice\testusing_folder\compare_use\test"
-
 
 # 4. 整理mp3 & wav檔案進list
 testWavFileList = [os.path.join(testWavOutputPath, _) for _ in os.listdir(testWavOutputPath)]
@@ -141,6 +133,6 @@ for i in range(len(testMusicList)):
 # confirmList = []
 
 #
-confirm001 = confirm_use.get_confirm_fftdata(specMusicList, testMusicList)
+confirmList = confirm_use.get_confirm_fftdata(specMusicList, testMusicList)
 print(time.time() - st)
 pass
