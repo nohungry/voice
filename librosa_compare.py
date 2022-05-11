@@ -4,7 +4,7 @@ import time
 from mutagen.mp3 import MP3
 import mp3_to_wav_and_reverse as transfer
 import frequency_transform
-# import shutil # 刪除資料夾
+import shutil # 刪除資料夾
 import confirm_use
 
 # root dir
@@ -33,6 +33,23 @@ specWavFolder = r"spec_music\wavFile"
 specMp3Folder = r"spec_music\mp3File"
 specWavOutputPath = os.path.join(rootPath, specWavFolder)
 specMp3OutputPath = os.path.join(rootPath, specMp3Folder)
+# 刪除清空原先已有的folder
+if os.path.isdir(specWavOutputPath):
+    try:
+        shutil.rmtree(specWavOutputPath)
+    except OSError as e:
+        print(e)
+    os.mkdir(specWavOutputPath)
+else:
+    os.mkdir(specWavOutputPath)
+if os.path.isdir(specMp3OutputPath):
+    try:
+        shutil.rmtree(specMp3OutputPath)
+    except OSError as e:
+        print(e)
+    os.mkdir(specMp3OutputPath)
+else:
+    os.mkdir(specMp3OutputPath)
 transfer.ffmpegMp3ToWav(specInputPath, specWavOutputPath)
 transfer.ffmpegWavToMp3(specInputPath, specMp3OutputPath)
 
@@ -88,6 +105,23 @@ testWavFolder = r"website_music\waveFile"
 testMp3Folder = r"website_music\mp3File"
 testWavOutputPath = os.path.join(rootPath, testWavFolder)
 testMp3OutputPath = os.path.join(rootPath, testMp3Folder)
+# 刪除清空原先已有的folder
+if os.path.isdir(testWavOutputPath):
+    try:
+        shutil.rmtree(testWavOutputPath)
+    except OSError as e:
+        print(e)
+    os.mkdir(testWavOutputPath)
+else:
+    os.mkdir(testWavOutputPath)
+if os.path.isdir(testMp3OutputPath):
+    try:
+        shutil.rmtree(testMp3OutputPath)
+    except OSError as e:
+        print(e)
+    os.mkdir(testMp3OutputPath)
+else:
+    os.mkdir(testMp3OutputPath)
 transfer.ffmpegMp3ToWav(testInputPath, testWavOutputPath)
 transfer.ffmpegWavToMp3(testInputPath, testMp3OutputPath)
 
@@ -129,10 +163,7 @@ for i in range(len(testMusicList)):
 # if len(testMusicList) < len(specMusicList):
 #     raise Exception("測試的音樂檔案數目少於SPEC提供的檔案數目")
 
-# # 確認好的音檔資訊放在confrimList
-# confirmList = []
-
-#
+# 音樂音效SpecMusic & TestMusic開始比對, 回傳對應的音檔
 confirmList = confirm_use.get_confirm_fftdata(specMusicList, testMusicList)
 print(time.time() - st)
 pass

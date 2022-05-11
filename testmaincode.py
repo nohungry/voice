@@ -141,13 +141,36 @@
 # print(time.time() - st)
 # pass
 
-import os
-root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# print(root_path)
-rootPath = os.path.dirname(__file__)
-specPath = r"spec_music\specMusic"
-aa = os.path.join(rootPath, specPath)
-# for path in os.listdir(aa):
-#     print(path)
-# print(os.path.dirname(__file__))
-print(aa)
+# import os
+# root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# # print(root_path)
+# rootPath = os.path.dirname(__file__)
+# specPath = r"spec_music\specMusic"
+# aa = os.path.join(rootPath, specPath)
+# # for path in os.listdir(aa):
+# #     print(path)
+# # print(os.path.dirname(__file__))
+# print(aa)
+
+# import shutil
+# #
+# testpath = r"C:\Users\norman_cheng\Desktop\voice_env\112"
+#
+# try:
+#     shutil.rmtree(testpath)
+# except OSError as e:
+#     print(e)
+# else:
+#     print("The directory is deleted successfully")
+#
+# import os
+# # if os.path.isdir(testpath):
+# #     print("yes")
+# # else:
+# #     print("no")
+# # isdir = os.path.isdir(testpath)
+# # pass
+# root = os.path.dirname(__file__)
+# test = r"spec_music\wavFile"
+# ttest = os.path.join(root, test)
+# os.mkdir(test)
