@@ -165,4 +165,3 @@ for i in range(len(testMusicList)):
 
 # 音樂音效SpecMusic & TestMusic開始比對, 回傳對應的音檔
 confirmList = confirm_use.get_confirm_fftdata(specMusicList, testMusicList)
-print(time.time() - st)
