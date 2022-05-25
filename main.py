@@ -8,7 +8,13 @@ def compare(path1, path2):
     musicPath = common.folderRemake()
     fileName = common.fileNameCatch(path001)
     tempPath = common.pathSplice(musicPath, fileName)
-    pass
+    mp3FilePath = common.transferMP3(path001, tempPath)
+    wavFilePath = common.transferWAV(path001, tempPath)
+    mp3FileList = common.sortList(mp3FilePath)
+    wavFileList = common.sortList(wavFilePath)
+    assert len(mp3FileList) == len(wavFileList), "numbers of file not equal"
+    mp3Data1, wavData1 = common.parseMusic(mp3FileList, wavFileList)
+    curPath1 = common.dataSplice(mp3Data1, wavData1)
 
 
 if __name__ == '__main__':

@@ -57,8 +57,6 @@ def sortList(path):
     arrange = [os.path.join(path, _) for _ in os.listdir(path)]
     return arrange
 
-# TODO 整理mp3 & wav檔案進list and descire alert
-
 def parseMusic(mp3_list, wav_list):
     mp3Parse = []
     for mp3File in mp3_list:
