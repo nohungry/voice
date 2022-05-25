@@ -2,7 +2,7 @@ import librosa
 import os
 import time
 from mutagen.mp3 import MP3
-import mp3_to_wav_and_reverse as transfer
+import transfer
 import frequency_transform
 import shutil # 刪除資料夾
 import confirm_use

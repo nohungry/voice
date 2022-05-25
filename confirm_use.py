@@ -1,5 +1,4 @@
 import numpy as np
-import time
 
 def get_confirm_fftdata(speclist, testlist):
     confirmList = []
