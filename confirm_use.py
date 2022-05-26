@@ -1,42 +1,42 @@
 import numpy as np
 
-def get_confirm_fftdata(speclist, testlist):
+def get_confirm_fftdata(list1, list2):
     confirmList = []
-    specMusicList = speclist
-    testMusicList = testlist
+    list1 = list1
+    list2 = list2
 
-    for specMusic in specMusicList:
+    for music1 in list1:
         count = 0
-        for testMusic in testMusicList:
+        for music2 in list2:
             # 分為單/ 雙聲道, 已dict.Keys()
-            if len(specMusic["fftData"].keys()) == 1:
-                if len(testMusic["fftData"].keys()) == 1:
-                    if (np.array_equal(specMusic["fftData"]["monoaural"], testMusic["fftData"]["monoaural"])):
+            if len(music1["fftData"].keys()) == 1:
+                if len(music2["fftData"].keys()) == 1:
+                    if (np.array_equal(music1["fftData"]["monoaural"], music2["fftData"]["monoaural"])):
                         temp = {
-                            "specMusic": specMusic["name"],
-                            "testMusic": testMusic["name"],
+                            "Music1": music1["name"],
+                            "Music2": music2["name"],
                         }
                         # 測試資料比對正確後, popout後續比對可以減少一次
-                        testData = testMusicList.pop(count)
+                        testData = list2.pop(count)
                         # 比對完成的資料放置於confirmList
                         confirmList.append(temp)
                         break
                     count += 1
-                elif len(testMusic["fftData"].keys()) == 2:
+                elif len(music2["fftData"].keys()) == 2:
                     count += 1
-            elif len(specMusic["fftData"].keys()) == 2:
-                if len(testMusic["fftData"].keys()) == 1:
+            elif len(music1["fftData"].keys()) == 2:
+                if len(music2["fftData"].keys()) == 1:
                     count += 1
-                elif len(testMusic["fftData"].keys()) == 2:
+                elif len(music2["fftData"].keys()) == 2:
                     if (
-                    np.array_equal(specMusic["fftData"]["left_channel"], testMusic["fftData"]["left_channel"])) and (
-                    np.array_equal(specMusic["fftData"]["right_channel"], testMusic["fftData"]["right_channel"])):
+                    np.array_equal(music1["fftData"]["left_channel"], music2["fftData"]["left_channel"])) and (
+                    np.array_equal(music1["fftData"]["right_channel"], music2["fftData"]["right_channel"])):
                         temp = {
-                            "specMusic": specMusic["name"],
-                            "testMusic": testMusic["name"],
+                            "Music1": music1["name"],
+                            "Music2": music2["name"],
                         }
                         # 測試資料比對正確後, popout後續比對可以減少一次
-                        testData = testMusicList.pop(count)
+                        testData = list2.pop(count)
                         # 比對完成的資料放置於confirmList
                         confirmList.append(temp)
                         break
@@ -47,20 +47,20 @@ def get_confirm_fftdata(speclist, testlist):
 
 def get_confirm_fragment(speclist, testlist):
     confirmList = []
-    specMusicList = speclist
-    testMusicList = testlist
+    list1 = speclist
+    list2 = testlist
 
-    for specMusic in specMusicList:
+    for music1 in list1:
         count = 0
-        for testMusic in testMusicList:
-            if len(specMusic["fragment"].shape) == 1 and len(testMusic["fragment"].shape) == 1:
-                if np.array_equal(specMusic["fragment"], testMusic["fragment"]):
+        for music2 in list2:
+            if len(music1["fragment"].shape) == 1 and len(music2["fragment"].shape) == 1:
+                if np.array_equal(music1["fragment"], music2["fragment"]):
                     temp = {
-                        "specMusic": specMusic["name"],
-                        "testMusic": testMusic["name"],
+                        "Music1": music1["name"],
+                        "Music2": music2["name"],
                     }
                     # 測試資料比對正確後, popout後續比對可以減少一次
-                    popout = testMusicList.pop(count)
+                    popout = list2.pop(count)
                     # 比對完成的資料放置於confirmList
                     confirmList.append(temp)
                     break

@@ -16,7 +16,7 @@ def compare(path1, path2):
     wavFileList1 = common.sortList(wavFilePath1)
     assert len(mp3FileList1) == len(wavFileList1), "numbers of file not equal"
     mp3Data1, wavData1 = common.parseMusic(mp3FileList1, wavFileList1)
-    curPath1 = common.dataSplice(mp3Data1, wavData1)
+    curList1 = common.dataSplice(mp3Data1, wavData1)
     # ----------------------------------------------------------------------
     common.filterOther(path002)
     fileName2 = common.fileNameCatch(path002)
@@ -27,7 +27,9 @@ def compare(path1, path2):
     wavFileList2 = common.sortList(wavFilePath2)
     assert len(mp3FileList2) == len(wavFileList2), "numbers of file not equal"
     mp3Data2, wavData2 = common.parseMusic(mp3FileList2, wavFileList2)
-    curPath2 = common.dataSplice(mp3Data2, wavData2)
-
+    curList2 = common.dataSplice(mp3Data2, wavData2)
+    # ----------------------------------------------------------------------
+    confirmList = confirm_use.get_confirm_fftdata(curList1, curList2)
+    # TODO 比較後的陣列回傳創建一個新的txt檔, 並放置於music_path folder裡面
 if __name__ == '__main__':
     compare(1, 2)

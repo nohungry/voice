@@ -1,6 +1,12 @@
 import os
 import subprocess
 
+"""
+    音樂檔轉換:
+        mp3 > wav
+        wav > mp3
+"""
+
 def ffmpegMp3ToWav(input_path, output_path):
     # windows cmd
     # c:\users\xxxx\xx\test_string>ffmpeg -i input_path output_path
