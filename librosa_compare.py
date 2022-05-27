@@ -7,6 +7,8 @@ import frequency_transform
 import shutil # 刪除資料夾
 import confirm_use
 
+# 測試流程code準備刪除
+
 # root dir
 rootPath = os.path.dirname(__file__)
 
