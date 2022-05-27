@@ -1,1 +1,0 @@
-No Content: https://ls-web-uat.paradise-soft.com.tw/includes/js/order-detail-component/index.js

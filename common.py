@@ -5,7 +5,8 @@ import librosa
 from mutagen.mp3 import MP3
 import frequency_transform
 import copy
-
+from  datetime import datetime
+import json
 
 def filterOther(filter_path):
     mp3Unique = r".mp3"
@@ -37,6 +38,10 @@ def pathSplice(path1, path2):
     # 預計path2: "\fileName"
     path = os.path.join(path1, path2)
     return path
+
+def mkMusicDir(path, word):
+    musicPath = path + r"_%s" %word
+    os.mkdir(musicPath)
 
 def transferMP3(folder_path, output_path):
     # 預計folderpath_是.wav檔案的原始音樂folder
@@ -92,4 +97,24 @@ def dataSplice(mp3, wav):
         mp3[index].update(wav[index])
     current = copy.deepcopy(mp3)
     return current
+
+def createLog(result):
+    # result: []
+    desktop = os.path.join(os.path.expanduser("~"), "Desktop") + "\\"
+    logFolderPath = os.path.join(desktop, r"Music_Log")
+    if not os.path.exists(logFolderPath):
+        os.mkdir(logFolderPath)
+    nowTime = datetime.today().strftime("%Y%m%d_%H%M")
+    logText = os.path.join(logFolderPath, r"log_" + nowTime + ".txt")
+    if len(result) <= 0 :
+        popoutMessage = "compare fail or music files are not equal"
+        with open(logText, "w") as f:
+            f.write(popoutMessage)
+    f = open(logText, "w")
+    for index in result:
+        f.write(json.dumps(index))
+        f.write("\r\n")
+    f.write("# ------------------\r\n")
+    f.write("numbers of equal files: %d" %len(result))
+    f.close()
 

@@ -1,1 +1,0 @@
-No Content: https://ls-web-uat.paradise-soft.com.tw/includes/js/mobile/marquee-4da4441dc2.js

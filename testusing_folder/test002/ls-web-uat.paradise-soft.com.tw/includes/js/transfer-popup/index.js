@@ -1,1 +1,0 @@
-No Content: https://ls-web-uat.paradise-soft.com.tw/includes/js/transfer-popup/index.js

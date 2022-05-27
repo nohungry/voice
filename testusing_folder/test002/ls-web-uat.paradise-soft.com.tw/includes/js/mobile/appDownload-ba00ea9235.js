@@ -1,1 +1,0 @@
-No Content: https://ls-web-uat.paradise-soft.com.tw/includes/js/mobile/appDownload-ba00ea9235.js

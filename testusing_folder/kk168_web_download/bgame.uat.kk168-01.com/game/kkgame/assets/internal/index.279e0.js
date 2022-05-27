@@ -1,1 +1,0 @@
-No Content: http://bgame.uat.kk168-01.com/game/kkgame/assets/internal/index.279e0.js
